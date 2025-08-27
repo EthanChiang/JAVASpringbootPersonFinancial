@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragment/base :: layout(~{::content})}">
+<body>
+<div th:fragment="content">
+  <form id="stockForm" method="post" th:action="@{/stock/create}">
+    <div class="mb-3">
+      <label for="stock-id" class="form-label">股票代號</label>
+      <input type="text" class="form-control" id="stockId" name="stockId" />
+    </div>
+
+    <div class="mb-3">
+      <label for="stock-num" class="form-label">成交股數</label>
+      <input type="number" class="form-control" id="stockNum" name="stockNum" />
+    </div>
+
+    <div class="mb-3">
+      <label for="stock-price" class="form-label">成交單價</label>
+      <input
+              type="number"
+              step="0.01"
+              class="form-control"
+              id="stockPrice"
+              name="stockPrice"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="processing-fee" class="form-label">手續費</label>
+      <input
+              type="number"
+              class="form-control"
+              id="processingFee"
+              name="processingFee"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="tax" class="form-label">交易稅</label>
+      <input type="number" class="form-control" id="tax" name="tax" />
+    </div>
+
+    <div class="mb-3">
+      <label for="date" class="form-label">日期</label>
+      <input type="date" class="form-control" id="dateInfo" name="dateInfo" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">提交表單</button>
+  </form>
+<!--  <script>-->
+<!--    document.addEventListener("DOMContentLoaded", function() {-->
+<!--        handleFormSubmit("stockForm", "/");-->
+<!--    });-->
+<!--  </script>-->
+</div>
+</body>
+</html>
