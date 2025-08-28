@@ -9,6 +9,5 @@ public interface CashService {
     Cash save(Cash cash);
     List<Cash> findAll();
     CashBalanceDto getCashBalance();
-//    double fetchUSDTWDRate();
     void deleteById(int id);
 }

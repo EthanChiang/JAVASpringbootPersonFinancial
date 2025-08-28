@@ -4,7 +4,6 @@ import com.first.demoapp.Repository.StockRepository;
 import com.first.demoapp.dto.StockBalanceDto;
 import com.first.demoapp.entity.Stock;
 import com.first.demoapp.service.StockService;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

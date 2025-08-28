@@ -6,7 +6,6 @@ import com.first.demoapp.entity.Cash;
 import com.first.demoapp.service.CashService;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +39,7 @@ public class CashServiceImpl implements CashService {
     public CashBalanceDto getCashBalance() {
         List<Cash> cashList = cashRepository.findAll();
         //計算台幣與美金總額
-        Integer totalTWD = 0;
+        int totalTWD = 0;
         double totalUSD = 0.0;
         double currencyRate = fetchUSDTWDRate();
         for (Cash cash : cashList) {
@@ -57,7 +56,6 @@ public class CashServiceImpl implements CashService {
     public void deleteById(int id) {
         cashRepository.deleteById(id);
     }
-
 
     private double fetchUSDTWDRate() {
         String apiUrl = "https://tw.rter.info/capi.php";
